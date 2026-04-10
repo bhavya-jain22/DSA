@@ -29,7 +29,7 @@ void dfsHelper(node* graph[], int src, int vis[]) {
 
 void dfs (node* graph[], int src, int n) {
     //remember to make this visited array in dfs function
-    int vis[n];
+    int* vis = (int*)malloc(sizeof(int)*n);
     for(int i=0; i<n; i++) vis[i] = 0;
     printf("DFS: ");
     // use separate function dfs helper
