@@ -48,7 +48,7 @@ void addEdge (node* graph[], int src, int dest) {
 }
 
 void bfs(node* graph[], int src, int n) {
-    int vis[n];
+    int* vis = (int*) malloc(sizeof(int)*n);
     for(int i=0; i<n; i++) vis[i] = 0;
     queue *q = createQueue(n);
     enqueue(q, src);
