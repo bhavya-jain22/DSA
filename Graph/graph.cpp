@@ -10,8 +10,8 @@ class Graph {
     public:
 
         Graph (int n) {
-            this->n = n;
-            G.resize(n);
+            this->n = n+1;
+            G.resize(n+1);
         }
     
         void addEdge (int a, int b) {
@@ -59,7 +59,7 @@ class Graph {
         }
 
 
-        void rec_dfs(int src) {
+        void dfs(int src) {
             // DFS just give me any one path
             cout << "\nUsing DFS, You can go from sourse(" << src << ") to these nodes/vertices: ";
             vector<int> visited(n, 0);
@@ -77,20 +77,5 @@ class Graph {
             // visited[x] = 2, represents that the 'x' node has been processed
             // (poped out of the stack (here returning from the stack(because of recursion)))
             visited[src] = 2;
-        }
-
-
-        void dfs(int src) {
-            stack<int> st;
-            st.push(src);
-            vector<int>visited(n, 0);
-            visited[src] = 1;
-            while(!st.empty()) {
-                int s = st.top();
-                for(int d: G[s]) {
-                    st.push(d);
-                    visited[d] = 1;
-                }
-            }
         }
 };
