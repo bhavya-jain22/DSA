@@ -118,7 +118,6 @@ int main () {
         cout << "Enter (u, v, w): ";
         cin >> u >> v >> w;
         d.addEdge(u, v, w);
-        // d.Union(u, v);
     }
 
     d.printGraph();
