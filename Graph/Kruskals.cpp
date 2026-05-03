@@ -104,18 +104,18 @@ class DSU : public W_Graph{
 
 
 int main () {
-    // #ifndef ONLINE_JUDGE
-    // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
-    // #endif
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    #endif
     int n, edges, u, v, w;
-    cout << "Enter the number of vertices & edges: ";
+    // cout << "Enter the number of vertices & edges: ";
     cin >> n >> edges;
 
     DSU d(n);
 
     while(edges--) {
-        cout << "Enter (u, v, w): ";
+        // cout << "Enter (u, v, w): ";
         cin >> u >> v >> w;
         d.addEdge(u, v, w);
     }
