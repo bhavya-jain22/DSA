@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#include"graph.cpp"
+#include"undirected_graph.cpp"
 
 using namespace std;
 
@@ -64,11 +64,11 @@ int main() {
     Graph g(n);
     cout << endl;
     
-    int u, v;
+    int u, v, w;
     while(edges--) {
-        cout << "Enter (u, v): ";
-        cin >> u >> v;
-        g.addEdge(u, v);
+        cout << "Enter (u, v, w): ";
+        cin >> u >> v >> w;
+        g.addEdge(u, v, w);
         d1.Union(u, v);
     }
 
