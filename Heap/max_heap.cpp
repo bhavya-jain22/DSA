@@ -1,15 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class MaxHeap {
-    
-    
+class MaxHeap {    
 
     private:
     
     vector<int> heap;
-    
-
     
     public:
     

@@ -66,8 +66,8 @@ class DSU : public W_Graph{
     }
 
     W_Graph Kruskals() {
-        // (w, u, v)
         int MSTweight = 0;
+        // (w, u, v)
         set<pair<int, pair<int, int>>> edges;
         int w, u, v;
         W_Graph g(n);
