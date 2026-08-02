@@ -4,9 +4,9 @@ using namespace std;
 // function declarations --->
 vector<int> buildSegmentTree(vector<int>& a);
 int segmentUtils(vector<int>& a, vector<int>& tree, int start, int end, int node);
-int query(vector<int>& lazy, vector<int>& tree, int& l, int& r, int start, int end, int node);
-void pointUpdate(vector<int>& tree, int start, int end, int node, int ind, int val);
-void rangeUpdate(vector<int>& lazy, vector<int>& tree, int start, int end, int l, int r, int node, int val);
+int query(vector<int>& lazy, vector<int>& tree, const int& l, const int& r, int start, int end, int node);
+void pointUpdate(vector<int>& tree, int start, int end, int node, int ind, const int& val);
+void rangeUpdate(vector<int>& lazy, vector<int>& tree, int start, int end, const int& l, const int& r, int node, const int& val);
 
 
 int main () {
@@ -75,7 +75,7 @@ int query(vector<int>& lazy, vector<int>& tree, const int& l, const int& r, int 
 }
 
 
-void pointUpdate(vector<int>& tree, int start, int end, int node, int ind, int val) {
+void pointUpdate(vector<int>& tree, int start, int end, int node, int ind, const int& val) {
     int mid = start + (end-start)/2;
     if(start==end) {
         tree[node] += val;
@@ -90,7 +90,7 @@ void pointUpdate(vector<int>& tree, int start, int end, int node, int ind, int v
 }
 
 
-void rangeUpdate(vector<int>& lazy, vector<int>& tree, int start, int end, int l, int r, int node, int val) {
+void rangeUpdate(vector<int>& lazy, vector<int>& tree, int start, int end, const int& l, const int& r, int node, const int& val) {
     int left = 2*node+1;
     int right = 2*node+2;
     if(lazy[node]) {

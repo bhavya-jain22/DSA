@@ -5,9 +5,9 @@ using namespace std;
 vector<int> build_segment_tree(vector<int>& a);
 void segment_utils(vector<int>& a, vector<int>& tree, int start, int end, int node);
 template<typename T> void printVector(const vector<T>& a);
-int query(vector<int>& lazy, vector<int>& tree, int& l, int& r, int start, int end, int node);
-void pointUpdate(vector<int>& tree, int start, int end, int node, int ind, int val);
-void rangeUpdate(vector<int>& lazy, vector<int>& tree, int l, int r, int start, int end, int node, int val);
+int query(vector<int>& lazy, vector<int>& tree, const int& l, const int& r, int start, int end, int node);
+void pointUpdate(vector<int>& tree, int start, int end, int node, int ind, const int& val);
+void rangeUpdate(vector<int>& lazy, vector<int>& tree, const int& l, const int& r, int start, int end, int node, const int& val);
 
 int main () {
 
@@ -94,7 +94,7 @@ int query(vector<int>& lazy, vector<int>& tree, const int& l, const int& r, int 
 }
 
 
-void pointUpdate(vector<int>& tree, int start, int end, int node, int ind, int val) {
+void pointUpdate(vector<int>& tree, int start, int end, int node, int ind, const int& val) {
     if(start == end) {
         tree[node] += val;
         return;
@@ -110,7 +110,7 @@ void pointUpdate(vector<int>& tree, int start, int end, int node, int ind, int v
 }
 
 
-void rangeUpdate(vector<int>& lazy, vector<int>& tree, int l, int r, int start, int end, int node, int val) {
+void rangeUpdate(vector<int>& lazy, vector<int>& tree, const int& l, const int& r, int start, int end, int node, const int& val) {
     int left = 2*node+1, right = 2*node+2;
     if(lazy[node]) {
         tree[node] += lazy[node];
@@ -129,7 +129,7 @@ void rangeUpdate(vector<int>& lazy, vector<int>& tree, int l, int r, int start, 
         }
         return;
     }
-    
+
     // no overlapping
     if(l>end || r<start) return;
 
